@@ -3,9 +3,11 @@ echo "Hello $USER"
 export COURSE_ID="_REPO_NAME_"
 
 if [ -f "$HOME/.token" ]; then
-    [ ! -r "$HOME/.token" -o ! -w "$HOME/.token" ] && echo "Warning: .token file has too open permissions"
+    if [ ! -r "$HOME/.token" ] || [ ! -w "$HOME/.token" ]; then
+        echo "Warning: .token file has too open permissions"
+    fi
 else
-    echo ".token file does not exist."
+    echo "Liar, there's no such a file."
 fi
 
 umask 002
