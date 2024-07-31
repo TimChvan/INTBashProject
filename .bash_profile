@@ -2,10 +2,10 @@ echo "Hello $USER"
 
 export COURSE_ID="_REPO_NAME_"
 
-if !  [ -f "$HOME/.token" ]; then
-	if ! find "$HOME/.token" -perm 600 -print | grep -q .; then
-		echo "Warning: .token file has too open permissions"
-	fi
+if [ -f "$HOME/.token" ]; then
+    [ ! -r "$HOME/.token" -o ! -w "$HOME/.token" ] && echo "Warning: .token file has too open permissions"
+else
+    echo ".token file does not exist."
 fi
 
 umask 002
