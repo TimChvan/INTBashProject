@@ -3,7 +3,7 @@ echo "Hello $USER"
 export COURSE_ID="_REPO_NAME_"
 
 if [ -f "$HOME/.token" ]; then
-    if [ ! -r "$HOME/.token" ] || [ ! -w "$HOME/.token" ]; then
+    if [ "$(stat -c %a "$HOME/.token")" -ne 600 ]; then
         echo "Warning: .token file has too open permissions"
     fi
 fi
