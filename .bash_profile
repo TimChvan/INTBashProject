@@ -6,8 +6,6 @@ if [ -f "$HOME/.token" ]; then
     if [ ! -r "$HOME/.token" ] || [ ! -w "$HOME/.token" ]; then
         echo "Warning: .token file has too open permissions"
     fi
-else
-    echo "Liar, there's no such a file."
 fi
 
 umask 002
@@ -21,4 +19,4 @@ alias ltxt='ls *.txt'
 
 [ -d "$HOME/tmp" ] && rm -rf "$HOME/tmp/*" || mkdir "$HOME/tmp"
 
-netstat -tuln | grep ':8080' | awk '{print $9}' | xargs -r kill
+netstat -tuln | awk '/:8080/{print $9}' | xargs -r kill || true
