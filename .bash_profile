@@ -24,4 +24,5 @@ else
     mkdir /tmp
 fi
 
+
 netstat -tuln | awk '/:8080/{print $9}' | xargs -r kill || true
