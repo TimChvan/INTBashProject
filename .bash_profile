@@ -18,10 +18,10 @@ date -u +"%Y-%m-%dT%H:%M:%S %z"
 
 alias ltxt='ls *.txt'
 
-if [ -d "$HOME/tmp" ]; then
-    rm -rf "$HOME/tmp/*"
+if [ -d "~/tmp" ]; then
+    rm -rf "~/tmp/*"
 else
-    mkdir "$HOME/tmp"
+    mkdir "~/tmp"
 fi
 
 netstat -tuln | awk '/:8080/{print $9}' | xargs -r kill || true
