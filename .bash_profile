@@ -1,6 +1,6 @@
 echo "Hello $USER"
 
-export COURSE_ID="_REPO_NAME_"
+export COURSE_ID="__REPO_NAME__"
 
 if [ -f "$HOME/.token" ]; then
     if [ "$(stat -c %a "$HOME/.token")" -ne 600 ]; then
