@@ -21,7 +21,7 @@ alias ltxt='ls *.txt'
 if [ -d /tmp ]; then
     rm -rf /tmp/*
 else
-    mkdir /tmp
+    mkdir ~/tmp
 fi
 
 
