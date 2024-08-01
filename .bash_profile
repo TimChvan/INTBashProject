@@ -19,9 +19,7 @@ date -u +"%Y-%m-%dT%H:%M:%S %z"
 alias ltxt='ls *.txt'
 
 if [ -d "$HOME/tmp" ]; then
-    if [ "$(ls -A "$HOME/tmp")" ]; then
-        rm -rf "$HOME/tmp/*"
-    fi
+    rm -rf "$HOME/tmp/*"
 else
     mkdir "$HOME/tmp"
 fi
