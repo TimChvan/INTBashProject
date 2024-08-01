@@ -8,6 +8,7 @@ if [ -f "$HOME/.token" ]; then
     fi
 fi
 
+
 umask 002
 
 USER_COMMANDS_DIR="$HOME/usercommands"
