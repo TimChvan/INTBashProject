@@ -9,7 +9,7 @@ if [ -f "$HOME/.token" ]; then
 fi
 
 
-umask rwxrwxr-x
+umask 007
 
 USER_COMMANDS_DIR="$HOME/usercommands"
 export PATH="$PATH:$USER_COMMANDS_DIR"
